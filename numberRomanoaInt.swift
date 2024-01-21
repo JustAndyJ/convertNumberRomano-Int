@@ -72,3 +72,39 @@ func solution(_ string: String) -> Int {
 let result = solution("MMCDXXI")
 
 print(result) // Imprime 2421
+
+"other solution"
+
+func value(of numeral: Character) -> Int? {
+  
+    switch numeral {
+    case "I": return 1
+    case "V": return 5
+    case "X": return 10
+    case "L": return 50
+    case "C": return 100
+    case "D": return 500
+    case "M": return 1000
+    default: return nil
+    }
+}
+func solution(_ string: String) -> Int {
+   let numerals = string.compactMap{value(of: $0)}
+  
+    let sum = numerals.reduce(0, +)
+  
+    let pairs = zip(numerals, numerals.dropFirst())
+     let filteredPairs = pairs.filter { $0.0 < $0.1}
+    
+    print(filteredPairs)
+    let firstElements = filteredPairs.map { $0.0 }
+    print(firstElements)
+    let difference = firstElements.reduce(0, +)
+    print(difference)
+    
+    return sum - difference * 2
+}
+let result = solution("XMXCXXX")
+print(result)  
+
+
