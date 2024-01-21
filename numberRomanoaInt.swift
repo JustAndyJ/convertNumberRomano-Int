@@ -1,3 +1,4 @@
+// my solution
 func solution(_ string:String) -> Int {
 
   let numberRomano = string.reversed()
@@ -39,7 +40,7 @@ func solution(_ string:String) -> Int {
 let result = solution("MMCDXXI")
 print(result)
 
-// forma 2
+// solution 2
 
 func solution(_ string: String) -> Int {
 
@@ -73,7 +74,7 @@ let result = solution("MMCDXXI")
 
 print(result) // Imprime 2421
 
-"other solution"
+// solution 3
 
 func value(of numeral: Character) -> Int? {
   
